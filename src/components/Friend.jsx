@@ -1,10 +1,10 @@
 const Friend = ({friend, pos}) => {
-    let styles = "w-full";
+    let styles = "col-sm-4 p-1";
     if (pos === 9) {
-        styles += " rounded-br-3xl";
+        styles += " rounded-bottom-right";
     }
     if (pos === 7) {
-        styles += " rounded-bl-3xl";
+        styles += " rounded-bottom-left";
     }
     return (
         <img className={styles} src={friend} alt="Friend"/>

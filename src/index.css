@@ -1,40 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
-@import "tailwindcss";
 
-@theme{
-    --font-poller: 'Poller One', sans-serif;
-    --background-image-sky: url("./assets/sky.jpg");
+:root {
     --color-main: #eedb00;
-    --color-gray: rgba(60, 69, 67, 0.6);
-    --color-danger: rgba(204, 3, 35, 0.5);
-    --shadow-hero: 0.6 rem 0.6rem 0.6rem gray;
+    --bg-color-gray: rgba(60, 69, 67, 0.6);
+    --bg-color-danger: rgba(204, 3, 35, 0.5);
 }
 
-@layer base {
-    body {
-        @apply font-poller bg-fixed bg-sky text-main
-    }
+body {
+    font-family: "Poller One", sans-serif;
+    background-image: url("./assets/sky.jpg");
+    color: var(--color-main);
+    background-attachment: fixed;
 }
 
-@layer utilities {
-    .crawl-wrap {
-        perspective: 400px;
-        overflow: hidden;
-        height: 60vh;
-    }
-
-    .crawl {
-        transform: rotateX(25deg) translateY(40%);
-        transform-origin: 50% 100%;
-        animation: crawl 55s linear infinite;
-    }
+header, footer {
+    background-color: var(--bg-color-gray);
 }
 
-@keyframes crawl {
-    0% {
-        transform: rotateX(25deg) translateY(40%);
-    }
-    100% {
-        transform: rotateX(25deg) translateY(-120%);
-    }
+footer {
+    height: 5rem;
 }
