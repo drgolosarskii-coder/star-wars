@@ -1,10 +1,10 @@
 import Navigation from "./Navigation.jsx";
 
-const Header = () => {
+const Header = ({changePage}) => {
     return (
-        <header className="rounded-t-3xl bg-gray">
-            <Navigation/>
-            <h1 className="text-right text-4xl py-4">Fantastic space opera about Jedi.</h1>
+        <header className="rounded-top-5">
+            <Navigation changePage={changePage}/>
+            <h1 className="text-center fs-1 py-4">Luke Skywalker</h1>
         </header>
     )
 }

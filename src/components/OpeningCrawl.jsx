@@ -20,11 +20,16 @@ const OpeningCrawl = () => {
         }
     }, [openingCrawl]);
 
+    if (openingCrawl) {
+        return <p className="far-galaxy">{openingCrawl}</p>;
+    } else {
         return (
-            <p className="text-3xl text-justify leading-normal tracking-widest">
-                {openingCrawl}
+            <p className="far-galaxy">
+                <span className="spinner-border spinner-border-sm"></span>
+                <span className="spinner-grow spinner-grow-sm">Loading...</span>
             </p>
         );
+    }
 };
 
 export default OpeningCrawl;
