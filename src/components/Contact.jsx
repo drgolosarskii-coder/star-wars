@@ -1,6 +1,5 @@
-import '../contactForm.css';
-import {useEffect, useState} from "react";
-import {base_url} from "../utils/constants.js";
+import { useEffect, useState } from "react";
+import { base_url } from "../utils/constants.js";
 
 const Contact = () => {
     const [planets, setPlanets] = useState(() => {
@@ -23,49 +22,67 @@ const Contact = () => {
                 });
         }
     }, [planets]);
+
     return (
-        <div className="container">
-            <form>
-                <label htmlFor="fname">First Name</label>
-                <input
-                    type="text"
-                    id="fname"
-                    name="firstname"
-                    placeholder="Your name.."
-                />
+        <div className="rounded-md bg-gray-100 p-5">
+            <form className="space-y-4">
+                <div>
+                    <label htmlFor="fname" className="mb-1 block text-sm font-medium text-gray-700">
+                        First Name
+                    </label>
+                    <input
+                        placeholder="STARWARS name..."
+                        className="w-full rounded border border-gray-300 px-3 py-3 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="lname" className="mb-1 block text-sm font-medium text-gray-700">
+                        Last Name
+                    </label>
+                    <input
+                        placeholder="STARWARS last name.."
+                        className="w-full rounded border border-gray-300 px-3 py-3 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                    />
+                </div>
 
-                <label htmlFor="lname">Last Name</label>
-                <input
-                    type="text"
-                    id="lname"
-                    name="lastname"
-                    placeholder="Your last name.."
-                />
+                <div>
+                    <label htmlFor="planet" className="mb-1 block text-sm font-medium text-gray-700">
+                        Planet
+                    </label>
+                    <select
+                        className="w-full rounded border border-gray-300 bg-white px-3 py-3 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                    >
+                        <option value="">Select planet...</option>
 
-                <label htmlFor="planet">Planet</label>
-                <select id="planet" name="planet">
-                    <option value="">Select planet...</option>
+                        {[...planets]
+                            .sort((a, b) => a.id - b.id)
+                            .map((p) => (
+                                <option key={p.id} value={p.id}>
+                                    {p.name}
+                                </option>
+                            ))}
+                    </select>
+                </div>
 
-                    {[...planets]
-                        .sort((a, b) => a.id - b.id)
-                        .map((p) => (
-                            <option key={p.id} value={p.id}>
-                                {p.name}
-                            </option>
-                        ))}
-                </select>
+                <div>
+                    <label htmlFor="subject" className="mb-1 block text-sm font-medium text-gray-700">
+                        Subject
+                    </label>
+                    <textarea
+                        placeholder="Free text"
+                        className="h-52 w-full resize-y rounded border border-gray-300 px-3 py-3 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                    />
+                </div>
 
-                <label htmlFor="subject">Subject</label>
-                <textarea
-                    id="subject"
-                    name="subject"
-                    placeholder="Write something.."
-                    style={{ height: 200 }}
-                />
-
-                <input type="submit" value="Submit" />
+                <button
+                    type="submit"
+                    className="inline-flex items-center rounded bg-emerald-600 px-5 py-3 font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                >
+                    Submit
+                </button>
             </form>
         </div>
     );
-}
+};
+
 export default Contact;
