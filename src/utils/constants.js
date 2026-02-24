@@ -27,3 +27,13 @@ All nine films, collectively referred to as the "Skywalker Saga", were nominated
  with Oscars going to the first three releases. Together with the spin-off films Rogue One (2016)
   and Solo (2018), the combined box office revenue of Star Wars theatrical live-action films equals over
    US$10 billion, making Star Wars the third-highest-grossing film franchise in cinematic history.`
+
+export const ABOUT_ME_FIELDS = [
+    { label: "Name", key: "name" },
+    { label: "Birth Year", key: "birth_year" },
+    { label: "Skin", key: "skin_color" },
+    { label: "Hair", key: "hair_color" },
+    { label: "Eyes", key: "eye_color" },
+    { label: "Weight", key: "mass" },
+    { label: "Height", key: "height" },
+];
